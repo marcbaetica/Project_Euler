@@ -3,15 +3,27 @@
 # 
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-seq = [1, 2]
+# seq = [1, 2]
+# threshold = 4000000
+# 
+# while True:
+#     new_val = seq[-2] + seq[-1]
+#     if new_val < threshold:
+#         seq.append(new_val)
+#     else:
+#         break
+# 
+# print(sum([item for item in seq if item%2==0]))
+
+
 threshold = 4000000
+a, b = 1, 2
+total = 0
 
-while True:
-    new_val = seq[-2] + seq[-1]
-    if new_val < threshold:
-        seq.append(new_val)
-    else:
-        break
+while b < threshold:
+    if b%2==0:
+        total += b
+    a, b = b, a + b
 
-print(sum([item for item in seq if item%2==0]))
+print(total)
 
