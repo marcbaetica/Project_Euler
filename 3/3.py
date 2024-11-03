@@ -10,19 +10,24 @@ def is_prime(num):  # Can only be divided by 1 and by itself.
     return True
 
 
-primes = []
+def find_primes(max_num):
+    for i in range(2, int(max_num/2)+1):
+        if is_prime(i):
+            yield i
+    print('Reached the end of possible prime factors.')
+
 
 # number = 13195
 number = 600851475143
 
-for i in range(2, number):
-    if is_prime(i):
-        # print(i)
-        if number%i==0:
-            number = number/i
-            primes.append(i)
-            print(f'Divided by prime number {i}. New number is now: {number}')
-            if number == 1:
-                break
-print(primes[-1])
+primes = find_primes(number)
+while True:
+    prime = next(primes)
+    if number%prime == 0:
+        number = number/prime
+        print(f'Divided by prime number {prime}. New number is now: {number}')
+        if number == 1:
+            break
+
+print(prime)
 
