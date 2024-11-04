@@ -27,6 +27,9 @@
 
 
 
+import math
+
+
 number_lines = [
         '73167176531330624919225119674426574742355349194934',
         '96983520312774506326239578318016984801869478851843',
@@ -56,10 +59,8 @@ fat = 0
 # window = 4
 window = 13
 
-for start_index in range(len(number_sequence)-window):
-    nums_product = 1
-    for i in range(start_index, start_index+window):
-        nums_product *= number_sequence[i]
+for start_index in range(len(number_sequence)+1-window):
+    nums_product = math.prod(number_sequence[start_index:start_index+window])
     if nums_product > fat:
         fat = nums_product
 
