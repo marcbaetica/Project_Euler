@@ -29,10 +29,9 @@ threshold = 2*10**6
 primes = generate_prime()
 while True:
     prime = next(primes)
-    # print(f'New prime found: {prime}')
     if prime > threshold:
         break
     sum += prime
-    # print(f'New sum is: {sum}')
+    # print(f'Found new prime number {prime}. New sum is: {sum}')
 print(sum)
 
