@@ -15,7 +15,7 @@
 
 
 seq_counter = dict({1: 1})
-for start in range(1, 10**6):
+for start in range(2, 10**6):
     count = 1
     curr = start
     while curr != 1:
@@ -25,10 +25,9 @@ for start in range(1, 10**6):
             break
         if curr%2 == 0:
             curr = curr/2
-            count += 1
         else:
             curr = 3 * curr + 1
-            count += 1
+        count += 1
     seq_counter[start] = count
 
 
