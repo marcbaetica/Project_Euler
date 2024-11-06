@@ -32,6 +32,6 @@ while True:
     if prime > threshold:
         break
     sum += prime
-    # print(f'Found new prime number {prime}. New sum is: {sum}')
+    # print(f'New prime [{prime}] sum is added. New sum is: {sum}')
 print(sum)
 
