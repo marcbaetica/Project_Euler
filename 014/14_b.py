@@ -20,7 +20,7 @@ for start in range(2, 10**6):
     curr = start
     while curr != 1:
         if int(curr) in seq_counter.keys():
-            # -1 because it was already added at computation time.
+            # -1 because the current item was already added at computation time.
             count += seq_counter[int(curr)] - 1     
             break
         if curr%2 == 0:
